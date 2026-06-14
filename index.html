@@ -27,6 +27,7 @@
       padding: 0 24px;
     }
 
+    /* Header & Nav */
     .navbar {
       background: white;
       box-shadow: 0 4px 20px rgba(0,0,0,0.02), 0 1px 2px rgba(0,0,0,0.03);
@@ -120,6 +121,7 @@
       border-color: #94a3b8;
     }
 
+    /* Hero */
     .hero {
       padding: 60px 0 40px;
     }
@@ -346,7 +348,7 @@
       font-weight: 500;
     }
 
-    /* Footer */
+    /* ========= FOOTER DIPERBAIKI ========= */
     .new-footer {
       background: #0f172a;
       color: #cbd5e1;
@@ -364,6 +366,13 @@
       font-size: 1.2rem;
       font-weight: 700;
       margin-bottom: 20px;
+      position: relative;
+      display: inline-block;
+    }
+    .footer-col-new p, .footer-col-new address {
+      font-style: normal;
+      line-height: 1.6;
+      margin-bottom: 12px;
     }
     .footer-col-new a {
       color: #94a3b8;
@@ -382,7 +391,7 @@
       color: #25D366;
       margin-top: 12px;
     }
-    /* Sosial media icons - hanya ikon, tidak ada yang kosong */
+    /* Sosial media icons - lengkap dengan TikTok */
     .social-icons {
       display: flex;
       gap: 14px;
@@ -407,13 +416,19 @@
       color: white;
       transform: translateY(-3px);
     }
+    /* Link di bawah sosial media */
     .social-links {
       margin-top: 24px;
     }
+    .social-links a {
+      margin-bottom: 10px;
+    }
+    /* Pembayaran */
     .payment-methods {
       display: flex;
       flex-wrap: wrap;
       gap: 12px;
+      align-items: center;
       margin-top: 16px;
     }
     .payment-methods span {
@@ -422,6 +437,7 @@
       border-radius: 40px;
       font-size: 0.8rem;
       font-weight: 500;
+      letter-spacing: 0.3px;
       color: #e2e8f0;
     }
     .ssl-badge {
@@ -634,14 +650,17 @@
   </div>
 </main>
 
+<!-- FOOTER DENGAN SOSIAL MEDIA LENGKAP (TikTok, X/Twitter) DAN TATA LETAK RAPI -->
 <footer class="new-footer">
   <div class="container">
     <div class="footer-grid-new">
+      <!-- Kolom 1: Nama & WA -->
       <div class="footer-col-new">
         <div class="footer-logo">DjuraganBuzzer.id</div>
         <p class="contact-wa"><i class="fab fa-whatsapp"></i> 0819-9976-3274</p>
       </div>
 
+      <!-- Kolom 2: Informasi -->
       <div class="footer-col-new">
         <h4>Informasi</h4>
         <a href="#">Beranda</a>
@@ -654,13 +673,14 @@
         <a href="#"><i class="fas fa-envelope-open-text"></i> Panduan Untuk Advertiser</a>
       </div>
 
+      <!-- Kolom 3: Sosial Media (dengan TikTok & X) + tautan pemakaian logo -->
       <div class="footer-col-new">
         <h4>Sosial Media</h4>
         <div class="social-icons">
           <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
           <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
           <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
-          <a href="#" aria-label="X (Twitter)"><i class="fab fa-x-twitter"></i></a>
+          <a href="#" aria-label="Twitter / X"><i class="fab fa-x-twitter"></i></a>
           <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
         </div>
         <div class="social-links">
@@ -669,6 +689,7 @@
         </div>
       </div>
 
+      <!-- Kolom 4: Pembayaran -->
       <div class="footer-col-new">
         <h4>Pembayaran</h4>
         <div class="payment-methods">
