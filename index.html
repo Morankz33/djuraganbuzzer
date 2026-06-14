@@ -60,6 +60,7 @@
       color: var(--text);
       line-height: 1.6;
       scroll-behavior: smooth;
+      overflow-x: hidden; /* Mencegah scroll horizontal di HP */
     }
 
     /* Skip to content */
@@ -303,7 +304,7 @@
       width: 55%; height: 55%;
       background: #1877F2;
       left: 0%; top: 20%;
-      font-size: min(8vw, 70px);      /* ← Ikon besar */
+      font-size: min(8vw, 70px);
     }
     .tiktok {
       width: 45%; height: 45%;
@@ -331,9 +332,49 @@
       font-size: min(7vw, 60px);
     }
 
-    @media (max-width: 768px) {
-      .social-engagement { max-width: 300px; }
-      .hero-content h1 { font-size: 2.2rem; }
+    /* ====== PERBAIKAN UNTUK MOBILE KECIL ====== */
+    @media (max-width: 600px) {
+      .hero {
+        padding: 40px 0 20px;
+      }
+      .hero-grid {
+        gap: 30px;
+      }
+      .hero-content h1 {
+        font-size: 2rem; /* Lebih kecil agar tidak terlalu dominan */
+      }
+      .hero-content p {
+        font-size: 0.95rem;
+      }
+      .hero-stats {
+        flex-direction: column;
+        gap: 16px;
+      }
+      .stat-item h3 {
+        font-size: 1.6rem;
+      }
+      .social-engagement {
+        max-width: 260px; /* Ikon lebih kecil di layar sempit */
+      }
+      .facebook { font-size: min(6vw, 48px); }
+      .tiktok  { font-size: min(5.5vw, 44px); }
+      .youtube { font-size: min(5vw, 40px); }
+      .x       { font-size: min(5.5vw, 44px); }
+      .instagram{ font-size: min(5.5vw, 44px); }
+    }
+
+    @media (max-width: 480px) {
+      .hero-content h1 {
+        font-size: 1.8rem;
+      }
+      .social-engagement {
+        max-width: 220px;
+      }
+      .facebook { font-size: min(5.5vw, 36px); }
+      .tiktok  { font-size: min(5vw, 34px); }
+      .youtube { font-size: min(4.5vw, 32px); }
+      .x       { font-size: min(5vw, 34px); }
+      .instagram{ font-size: min(5vw, 34px); }
     }
 
     /* Stats ribbon */
@@ -353,6 +394,18 @@
       font-size: 2rem;
       font-weight: 800;
       color: var(--primary);
+    }
+    /* Ribbon mobile: font lebih kecil, tumpuk vertikal jika perlu */
+    @media (max-width: 600px) {
+      .stats-ribbon {
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+        padding: 20px;
+      }
+      .ribbon-item .number {
+        font-size: 1.5rem;
+      }
     }
 
     /* ======= Sections ======= */
@@ -380,6 +433,14 @@
       box-shadow: 0 20px 30px -12px rgba(0,0,0,0.08);
     }
     .card-icon { font-size: 2.6rem; color: var(--primary); margin-bottom: 20px; }
+
+    /* Grid lebih fleksibel di mobile */
+    @media (max-width: 480px) {
+      .grid-2col {
+        grid-template-columns: 1fr; /* Satu kolom penuh */
+        gap: 20px;
+      }
+    }
 
     /* Insight cards */
     .insights-wrapper {
@@ -426,6 +487,23 @@
       margin-top: 8px;
     }
 
+    @media (max-width: 600px) {
+      .insights-wrapper {
+        flex-direction: column;
+        gap: 20px;
+      }
+      .insight-card h3 {
+        font-size: 1.5rem;
+      }
+      .insight-card .big-number {
+        font-size: 3rem;
+      }
+      .insight-card p {
+        max-width: 100%;
+        font-size: 0.9rem;
+      }
+    }
+
     /* Roles */
     .roles-flex {
       display: flex;
@@ -448,6 +526,13 @@
       list-style: none;
     }
     .role-card li i { color: var(--primary); width: 24px; }
+
+    @media (max-width: 600px) {
+      .roles-flex {
+        flex-direction: column;
+        gap: 24px;
+      }
+    }
 
     /* Live orders */
     .live-orders {
@@ -565,6 +650,13 @@
       margin-bottom: 16px;
     }
 
+    @media (max-width: 768px) {
+      .footer-grid-new {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+    }
+
     /* Floating Chat */
     .floating-chat {
       position: fixed;
@@ -585,11 +677,14 @@
     .floating-chat:hover { transform: scale(1.05); }
     .floating-chat i { font-size: 1.8rem; color: white; }
 
-    @media (max-width: 768px) {
-      .footer-grid-new { grid-template-columns: 1fr; gap: 32px; }
-      .insights-wrapper { flex-direction: column; }
-      .insight-card p { max-width: 100%; }
-      .insight-card h3 { font-size: 1.5rem; }
+    /* Tombol chat lebih kecil di HP */
+    @media (max-width: 480px) {
+      .floating-chat {
+        width: 48px;
+        height: 48px;
+        bottom: 20px;
+        right: 20px;
+      }
     }
   </style>
 </head>
@@ -600,12 +695,9 @@
   <header class="site-header">
     <div class="container nav-container">
       <div class="logo">Djuragan<span>Buzzer</span>.id</div>
-
-      <!-- Tombol hamburger untuk mobile -->
       <button class="hamburger" id="hamburger-btn" aria-label="Menu navigasi" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
-
       <nav class="nav-menu" id="nav-menu" aria-label="Navigasi utama">
         <a href="#" class="active" aria-current="page">Beranda</a>
         <a href="#">Layanan</a>
