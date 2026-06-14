@@ -348,7 +348,7 @@
       font-weight: 500;
     }
 
-    /* ========= FOOTER BARU (sesuai permintaan) ========= */
+    /* ========= FOOTER DIPERBAIKI ========= */
     .new-footer {
       background: #0f172a;
       color: #cbd5e1;
@@ -357,7 +357,7 @@
     }
     .footer-grid-new {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
       gap: 40px;
       margin-bottom: 48px;
     }
@@ -391,9 +391,10 @@
       color: #25D366;
       margin-top: 12px;
     }
+    /* Sosial media icons - diperbaiki */
     .social-icons {
       display: flex;
-      gap: 18px;
+      gap: 16px;
       margin-top: 16px;
       flex-wrap: wrap;
     }
@@ -402,22 +403,24 @@
       align-items: center;
       justify-content: center;
       background: rgba(255,255,255,0.08);
-      width: 42px;
-      height: 42px;
+      width: 44px;
+      height: 44px;
       border-radius: 50%;
       font-size: 1.3rem;
       transition: 0.2s;
       color: #cbd5e1;
+      text-decoration: none;
     }
     .social-icons a:hover {
       background: #1e6f5c;
       color: white;
       transform: translateY(-3px);
     }
+    /* Pembayaran - rapikan */
     .payment-methods {
       display: flex;
       flex-wrap: wrap;
-      gap: 16px;
+      gap: 12px;
       align-items: center;
       margin-top: 16px;
     }
@@ -427,7 +430,19 @@
       border-radius: 40px;
       font-size: 0.8rem;
       font-weight: 500;
-      letter-spacing: 0.5px;
+      letter-spacing: 0.3px;
+      color: #e2e8f0;
+    }
+    .ssl-badge {
+      margin-top: 20px;
+      display: inline-block;
+      background: #1e293b;
+      padding: 6px 16px;
+      border-radius: 30px;
+      font-size: 0.7rem;
+      font-weight: 600;
+      border: 1px solid #334155;
+      color: #94a3b8;
     }
     .copyright-new {
       border-top: 1px solid #1e293b;
@@ -628,23 +643,18 @@
   </div>
 </main>
 
-<!-- FOOTER BARU (sesuai permintaan dengan alamat, WA, sosial media + YouTube & X, pembayaran) -->
+<!-- FOOTER DIPERBAIKI: tanpa alamat jalan, tanpa email, sosial media icon rapi, pembayaran rapi -->
 <footer class="new-footer">
   <div class="container">
     <div class="footer-grid-new">
-      <!-- Kolom 1: Alamat & Kontak -->
+      <!-- Kolom 1: Nama & WA saja -->
       <div class="footer-col-new">
         <div class="footer-logo">DjuraganBuzzer.id</div>
-        <address>
-          Jalan Cimanuk No. 6<br>
-          Bandung 40115 - Jawa Barat<br>
-          Indonesia
-        </address>
         <p class="contact-wa"><i class="fab fa-whatsapp"></i> 0819-9976-3274</p>
-        <p><i class="far fa-envelope"></i> support@djuraganbuzzer.id</p>
+        <!-- alamat dan email dihilangkan -->
       </div>
 
-      <!-- Kolom 2: Informasi (menu) -->
+      <!-- Kolom 2: Informasi -->
       <div class="footer-col-new">
         <h4>Informasi</h4>
         <a href="#">Beranda</a>
@@ -657,7 +667,7 @@
         <a href="#"><i class="fas fa-envelope-open-text"></i> Panduan Untuk Advertiser</a>
       </div>
 
-      <!-- Kolom 3: Sosial Media (dengan YouTube & X) -->
+      <!-- Kolom 3: Sosial Media dengan ikon yang rapi -->
       <div class="footer-col-new">
         <h4>Sosial Media</h4>
         <div class="social-icons">
@@ -672,21 +682,21 @@
         </div>
       </div>
 
-      <!-- Kolom 4: Metode Pembayaran -->
+      <!-- Kolom 4: Pembayaran (rapi dengan grid) -->
       <div class="footer-col-new">
         <h4>Pembayaran</h4>
         <div class="payment-methods">
           <span>PermataBank</span>
           <span>BCA</span>
           <span>BNI</span>
-          <span>VISA</span>
+          <span>Visa</span>
           <span>Gopay</span>
           <span>Mandiri</span>
           <span>Mastercard</span>
           <span>Midtrans</span>
         </div>
-        <div style="margin-top: 24px;">
-          <img src="https://placehold.co/120x40/e2e8f0/1e6f5c?text=SSL+Secure" alt="Secure payment" style="max-width:100px; border-radius:8px;">
+        <div class="ssl-badge">
+          <i class="fas fa-lock"></i> SSL Secure
         </div>
       </div>
     </div>
