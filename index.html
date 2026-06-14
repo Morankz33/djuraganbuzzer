@@ -2,11 +2,52 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>DjuraganBuzzer.id | Jasa Buzzer Komen Positif & Promosi Bisnis</title>
+
+  <!-- SEO & Meta -->
+  <meta name="description" content="Jasa buzzer profesional untuk komentar positif, promosi bisnis, dan peningkatan engagement di Instagram, TikTok, YouTube, dan PlayStore. 100% real interaksi.">
+  <link rel="canonical" href="https://djuraganbuzzer.id/">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💬</text></svg>">
+
+  <!-- Open Graph / Social -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="DjuraganBuzzer.id – Jasa Buzzer Komen Positif & Promosi Bisnis">
+  <meta property="og:description" content="Bangun opini publik, tingkatkan engagement, dan jangkau audiens lebih luas dengan komentar dari akun asli orang Indonesia. Bukan robot, 100% real interaksi.">
+  <meta property="og:url" content="https://djuraganbuzzer.id/">
+  <meta property="og:image" content="https://djuraganbuzzer.id/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="DjuraganBuzzer.id">
+  <meta name="twitter:description" content="Komentar positif & promosi bisnis viral. 100% real interaksi.">
+  <meta name="twitter:image" content="https://djuraganbuzzer.id/og-image.png">
+
+  <!-- Preconnect untuk Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Font Awesome dengan CDN aman -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+
   <style>
+    /* ======= CSS Variables ======= */
+    :root {
+      --primary: #1e6f5c;
+      --primary-dark: #0f5a49;
+      --primary-light: #e0f2fe;
+      --dark: #0f172a;
+      --text: #1e293b;
+      --text-soft: #334155;
+      --white: #ffffff;
+      --gray-100: #f9fafc;
+      --gray-200: #eef2ff;
+      --gray-300: #edf2f7;
+      --gray-400: #cbd5e1;
+      --gray-500: #94a3b8;
+      --radius: 28px;
+      --transition: 0.25s ease;
+    }
+
     * {
       margin: 0;
       padding: 0;
@@ -15,10 +56,25 @@
 
     body {
       font-family: 'Inter', sans-serif;
-      background: #f9fafc;
-      color: #1e293b;
-      line-height: 1.5;
+      background: var(--gray-100);
+      color: var(--text);
+      line-height: 1.6;
       scroll-behavior: smooth;
+    }
+
+    /* Skip to content */
+    .skip-link {
+      position: absolute;
+      top: -40px;
+      left: 0;
+      background: var(--primary);
+      color: white;
+      padding: 8px;
+      z-index: 999;
+      transition: top 0.3s;
+    }
+    .skip-link:focus {
+      top: 0;
     }
 
     .container {
@@ -27,88 +83,134 @@
       padding: 0 24px;
     }
 
-    /* Navbar */
-    .navbar {
-      background: white;
+    /* ======= Header & Navbar ======= */
+    .site-header {
+      background: rgba(255,255,255,0.96);
       box-shadow: 0 4px 20px rgba(0,0,0,0.02);
       position: sticky;
       top: 0;
       z-index: 50;
-      backdrop-filter: blur(2px);
-      background: rgba(255,255,255,0.96);
+      backdrop-filter: blur(4px);
     }
     .nav-container {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      flex-wrap: wrap;
       padding: 16px 0;
     }
+
     .logo {
       font-size: 1.8rem;
       font-weight: 800;
-      background: linear-gradient(135deg, #0f2b3d, #1e6f5c);
+      background: linear-gradient(135deg, #0f2b3d, var(--primary));
       -webkit-background-clip: text;
       background-clip: text;
       color: transparent;
     }
     .logo span { color: #2c7a5e; }
-    .nav-links {
+
+    /* Hamburger button (visible on mobile) */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      background: none;
+      border: none;
+      gap: 5px;
+      padding: 4px;
+    }
+    .hamburger span {
+      display: block;
+      width: 28px;
+      height: 3px;
+      background: var(--text);
+      border-radius: 4px;
+      transition: 0.3s;
+    }
+
+    /* Nav links */
+    .nav-menu {
       display: flex;
       gap: 28px;
       align-items: center;
     }
-    .nav-links a {
+    .nav-menu a {
       text-decoration: none;
       font-weight: 500;
       color: #2c3e50;
-      transition: 0.2s;
+      transition: color var(--transition);
+      font-size: 1rem;
     }
-    .nav-links a:hover { color: #1e6f5c; }
+    .nav-menu a:hover,
+    .nav-menu a.active {
+      color: var(--primary);
+    }
     .btn-outline-light {
-      border: 1.5px solid #1e6f5c;
+      border: 1.5px solid var(--primary);
       background: transparent;
       padding: 8px 20px;
       border-radius: 40px;
       font-weight: 600;
-      color: #1e6f5c;
+      color: var(--primary);
     }
     .btn-outline-light:hover {
-      background: #1e6f5c;
+      background: var(--primary);
       color: white;
     }
-    .btn-primary {
-      background: #1e6f5c;
-      border: none;
+
+    /* Mobile nav */
+    @media (max-width: 768px) {
+      .hamburger {
+        display: flex;
+      }
+      .nav-menu {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 72px;
+        left: 0;
+        width: 100%;
+        background: white;
+        padding: 24px;
+        gap: 16px;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+      }
+      .nav-menu.active {
+        display: flex;
+      }
+    }
+
+    /* ======= Buttons ======= */
+    .btn-primary,
+    .btn-secondary {
+      display: inline-block;
+      text-decoration: none;
       padding: 12px 32px;
       border-radius: 40px;
       font-weight: 700;
-      color: white;
       cursor: pointer;
-      transition: 0.25s;
-      display: inline-block;
-      text-decoration: none;
+      transition: background var(--transition), transform var(--transition);
+    }
+    .btn-primary {
+      background: var(--primary);
+      border: none;
+      color: white;
       box-shadow: 0 8px 14px -6px rgba(30,111,92,0.2);
     }
     .btn-primary:hover {
-      background: #0f5a49;
+      background: var(--primary-dark);
       transform: translateY(-2px);
     }
     .btn-secondary {
       background: white;
-      border: 1px solid #cbd5e1;
-      padding: 12px 32px;
-      border-radius: 40px;
-      font-weight: 600;
+      border: 1px solid var(--gray-400);
       color: #1f2937;
-      text-decoration: none;
-      display: inline-block;
     }
     .btn-secondary:hover {
       background: #f1f5f9;
     }
 
-    /* Hero */
+    /* ======= Hero ======= */
     .hero {
       padding: 60px 0 40px;
     }
@@ -120,7 +222,7 @@
     }
     .hero-content { flex: 1; }
     .hero-badge {
-      background: #e0f2fe;
+      background: var(--primary-light);
       color: #0c4e6e;
       display: inline-block;
       padding: 4px 14px;
@@ -141,7 +243,7 @@
     }
     .hero-content p {
       font-size: 1.1rem;
-      color: #334155;
+      color: var(--text-soft);
       margin-bottom: 32px;
       max-width: 550px;
     }
@@ -149,11 +251,12 @@
       display: flex;
       gap: 28px;
       margin-top: 32px;
+      flex-wrap: wrap;
     }
     .stat-item h3 {
       font-size: 1.9rem;
       font-weight: 800;
-      color: #1e6f5c;
+      color: var(--primary);
     }
     .hero-image {
       flex: 1;
@@ -162,11 +265,11 @@
       align-items: center;
     }
 
-    /* SOCIAL MEDIA ICONS - kotak luar diperkecil */
+    /* Social media icons */
     .social-engagement {
       position: relative;
       width: 100%;
-      max-width: 380px;   /* diperkecil dari 600px */
+      max-width: 380px;
       aspect-ratio: 1 / 1;
       margin: 0 auto;
     }
@@ -192,62 +295,45 @@
       color: white;
       box-shadow: 0 15px 30px rgba(0,0,0,0.3);
       transition: transform 0.2s;
-      cursor: default;
     }
-    .icon:hover {
-      transform: scale(1.03);
-    }
+    .icon:hover { transform: scale(1.03); }
+
+    /* Ukuran font ikon media sosial – DIPERBESAR */
     .facebook {
-      width: 55%;
-      height: 55%;
+      width: 55%; height: 55%;
       background: #1877F2;
-      left: 0%;
-      top: 20%;
-      font-size: min(8vw, 70px);
+      left: 0%; top: 20%;
+      font-size: min(8vw, 70px);      /* ← Ikon besar */
     }
     .tiktok {
-      width: 45%;
-      height: 45%;
+      width: 45%; height: 45%;
       background: #000;
-      left: 32%;
-      top: 0%;
+      left: 32%; top: 0%;
       font-size: min(7vw, 60px);
     }
     .youtube {
-      width: 50%;
-      height: 38%;
+      width: 50%; height: 38%;
       background: #FF0000;
-      right: 0%;
-      top: 28%;
+      right: 0%; top: 28%;
       border-radius: 30px;
       font-size: min(6vw, 55px);
     }
     .x {
-      width: 48%;
-      height: 48%;
+      width: 48%; height: 48%;
       background: #000;
-      left: 22%;
-      bottom: 5%;
+      left: 22%; bottom: 5%;
       font-size: min(7vw, 60px);
     }
     .instagram {
-      width: 50%;
-      height: 50%;
+      width: 50%; height: 50%;
       background: linear-gradient(45deg, #feda75, #fa7e1e, #d62976, #962fbf, #4f5bd5);
-      right: 0%;
-      bottom: 0%;
+      right: 0%; bottom: 0%;
       font-size: min(7vw, 60px);
     }
 
     @media (max-width: 768px) {
       .social-engagement { max-width: 300px; }
-      .facebook { font-size: min(12vw, 55px); }
-      .tiktok { font-size: min(10vw, 48px); }
-      .youtube { font-size: min(9vw, 45px); }
-      .x { font-size: min(10vw, 48px); }
-      .instagram { font-size: min(10vw, 48px); }
       .hero-content h1 { font-size: 2.2rem; }
-      .hero-stats { flex-wrap: wrap; }
     }
 
     /* Stats ribbon */
@@ -260,14 +346,16 @@
       flex-wrap: wrap;
       margin: 30px 0 40px;
       gap: 20px;
-      border: 1px solid #eef2ff;
+      border: 1px solid var(--gray-200);
     }
     .ribbon-item { text-align: center; flex: 1; }
     .ribbon-item .number {
       font-size: 2rem;
       font-weight: 800;
-      color: #1e6f5c;
+      color: var(--primary);
     }
+
+    /* ======= Sections ======= */
     .section { padding: 70px 0; }
     .section-title {
       font-size: 2.2rem;
@@ -282,18 +370,18 @@
     }
     .card {
       background: white;
-      border-radius: 28px;
+      border-radius: var(--radius);
       padding: 32px 28px;
-      border: 1px solid #edf2f7;
-      transition: 0.3s;
+      border: 1px solid var(--gray-300);
+      transition: transform var(--transition), box-shadow var(--transition);
     }
     .card:hover {
       transform: translateY(-6px);
       box-shadow: 0 20px 30px -12px rgba(0,0,0,0.08);
     }
-    .card-icon { font-size: 2.6rem; color: #1e6f5c; margin-bottom: 20px; }
+    .card-icon { font-size: 2.6rem; color: var(--primary); margin-bottom: 20px; }
 
-    /* INSIGHT CARD - DIPERBAIKI CENTER */
+    /* Insight cards */
     .insights-wrapper {
       display: flex;
       flex-wrap: wrap;
@@ -305,17 +393,15 @@
       background: white;
       border-radius: 32px;
       padding: 40px 32px;
-      text-align: center;   /* semua teks di tengah */
-      border: 1px solid #eef2ff;
-      transition: 0.2s;
+      text-align: center;
+      border: 1px solid var(--gray-200);
+      transition: transform 0.2s;
     }
-    .insight-card:hover {
-      transform: translateY(-4px);
-    }
+    .insight-card:hover { transform: translateY(-4px); }
     .insight-card .big-number {
       font-size: 4rem;
       font-weight: 800;
-      color: #1e6f5c;
+      color: var(--primary);
       line-height: 1.2;
       margin-bottom: 16px;
     }
@@ -325,16 +411,14 @@
       margin-bottom: 16px;
     }
     .insight-card p {
-      color: #334155;
+      color: var(--text-soft);
       max-width: 90%;
-      margin-left: auto;
-      margin-right: auto;
-      margin-bottom: 20px;
+      margin: 0 auto 20px;
     }
     .badge-percent {
       display: inline-block;
-      background: #e0f2fe;
-      color: #0f5a49;
+      background: var(--primary-light);
+      color: var(--primary-dark);
       font-weight: 700;
       padding: 8px 20px;
       border-radius: 40px;
@@ -342,6 +426,7 @@
       margin-top: 8px;
     }
 
+    /* Roles */
     .roles-flex {
       display: flex;
       flex-wrap: wrap;
@@ -351,7 +436,7 @@
     .role-card {
       flex: 1;
       background: white;
-      border-radius: 28px;
+      border-radius: var(--radius);
       padding: 28px;
       border: 1px solid #e2e8f0;
     }
@@ -362,31 +447,40 @@
       gap: 12px;
       list-style: none;
     }
-    .role-card li i { color: #1e6f5c; width: 24px; }
+    .role-card li i { color: var(--primary); width: 24px; }
+
+    /* Live orders */
     .live-orders {
       background: #1e293b;
       color: white;
       border-radius: 32px;
       padding: 28px 32px;
       margin: 50px 0;
+      overflow: hidden;
     }
     .order-marquee {
       display: flex;
-      flex-wrap: wrap;
       gap: 20px;
-      justify-content: space-between;
+      animation: scroll 20s linear infinite;
+      white-space: nowrap;
+      width: max-content;
+    }
+    @keyframes scroll {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
     }
     .order-item {
       background: rgba(255,255,255,0.1);
       border-radius: 40px;
       padding: 6px 18px;
       font-size: 0.85rem;
+      white-space: nowrap;
     }
 
-    /* Footer */
-    .new-footer {
-      background: #0f172a;
-      color: #cbd5e1;
+    /* ======= Footer ======= */
+    .site-footer {
+      background: var(--dark);
+      color: var(--gray-400);
       padding: 56px 0 32px;
       margin-top: 40px;
     }
@@ -402,12 +496,13 @@
       margin-bottom: 20px;
     }
     .footer-col-new a {
-      color: #94a3b8;
+      color: var(--gray-500);
       text-decoration: none;
       display: block;
       margin-bottom: 12px;
+      transition: color 0.2s;
     }
-    .footer-col-new a:hover { color: #cbd5e1; }
+    .footer-col-new a:hover { color: var(--gray-400); }
     .contact-wa {
       font-size: 1rem;
       font-weight: 600;
@@ -429,12 +524,10 @@
       align-items: center;
       justify-content: center;
       font-size: 1.3rem;
-      color: #cbd5e1;
+      color: var(--gray-400);
+      transition: background 0.2s;
     }
-    .social-icons a:hover {
-      background: #1e6f5c;
-      color: white;
-    }
+    .social-icons a:hover { background: var(--primary); color: white; }
     .payment-methods {
       display: flex;
       flex-wrap: wrap;
@@ -465,28 +558,33 @@
     .footer-logo {
       font-size: 1.6rem;
       font-weight: 800;
-      background: linear-gradient(135deg, #e2e8f0, #94a3b8);
+      background: linear-gradient(135deg, #e2e8f0, var(--gray-500));
       -webkit-background-clip: text;
       background-clip: text;
       color: transparent;
       margin-bottom: 16px;
     }
+
+    /* Floating Chat */
     .floating-chat {
       position: fixed;
       bottom: 28px;
       right: 28px;
-      background: #1e6f5c;
+      background: var(--primary);
       width: 56px;
       height: 56px;
       border-radius: 30px;
       display: flex;
       align-items: center;
       justify-content: center;
-      cursor: pointer;
       z-index: 99;
       box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+      cursor: pointer;
+      transition: transform 0.2s;
     }
+    .floating-chat:hover { transform: scale(1.05); }
     .floating-chat i { font-size: 1.8rem; color: white; }
+
     @media (max-width: 768px) {
       .footer-grid-new { grid-template-columns: 1fr; gap: 32px; }
       .insights-wrapper { flex-direction: column; }
@@ -497,174 +595,229 @@
 </head>
 <body>
 
-<div class="navbar">
-  <div class="container nav-container">
-    <div class="logo">Djuragan<span>Buzzer</span>.id</div>
-    <div class="nav-links">
-      <a href="#">Beranda</a>
-      <a href="#">Layanan</a>
-      <a href="#">Cara Kerja</a>
-      <a href="#">Daftar</a>
-      <a href="#" class="btn-outline-light">Masuk</a>
-    </div>
-  </div>
-</div>
+  <a href="#main-content" class="skip-link">Lompat ke konten utama</a>
 
-<main>
-  <section class="hero">
-    <div class="container hero-grid">
-      <div class="hero-content">
-        <div class="hero-badge"><i class="fas fa-chart-line"></i> Jasa Buzzer #1 Indonesia</div>
-        <h1>Komentar Positif & <br>Promosi Bisnis Viral</h1>
-        <p>Bangun opini publik, tingkatkan engagement, dan jangkau audiens lebih luas dengan komentar dari akun asli orang Indonesia. Bukan robot, 100% real interaksi.</p>
-        <div style="display: flex; gap: 16px; flex-wrap: wrap;">
-          <a href="#" class="btn-primary">Mulai Promosi →</a>
-          <a href="#" class="btn-secondary">Jadi Komentator</a>
+  <header class="site-header">
+    <div class="container nav-container">
+      <div class="logo">Djuragan<span>Buzzer</span>.id</div>
+
+      <!-- Tombol hamburger untuk mobile -->
+      <button class="hamburger" id="hamburger-btn" aria-label="Menu navigasi" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="nav-menu" id="nav-menu" aria-label="Navigasi utama">
+        <a href="#" class="active" aria-current="page">Beranda</a>
+        <a href="#">Layanan</a>
+        <a href="#">Cara Kerja</a>
+        <a href="#">Daftar</a>
+        <a href="#" class="btn-outline-light">Masuk</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <div class="hero-badge"><i class="fas fa-chart-line" aria-hidden="true"></i> Jasa Buzzer #1 Indonesia</div>
+          <h1>Komentar Positif & <br>Promosi Bisnis Viral</h1>
+          <p>Bangun opini publik, tingkatkan engagement, dan jangkau audiens lebih luas dengan komentar dari akun asli orang Indonesia. Bukan robot, 100% real interaksi.</p>
+          <div style="display: flex; gap: 16px; flex-wrap: wrap;">
+            <a href="#" class="btn-primary">Mulai Promosi →</a>
+            <a href="#" class="btn-secondary">Jadi Komentator</a>
+          </div>
+          <div class="hero-stats">
+            <div class="stat-item"><h3>272K+</h3><span>Komentator Terdaftar</span></div>
+            <div class="stat-item"><h3>3K+</h3><span>Order Kemarin</span></div>
+            <div class="stat-item"><h3>1K+</h3><span>Order Hari Ini</span></div>
+          </div>
         </div>
-        <div class="hero-stats">
-          <div class="stat-item"><h3>272K+</h3><span>Komentator Terdaftar</span></div>
-          <div class="stat-item"><h3>3K+</h3><span>Order Kemarin</span></div>
-          <div class="stat-item"><h3>1K+</h3><span>Order Hari Ini</span></div>
+        <div class="hero-image">
+          <div class="social-engagement" aria-hidden="true">
+            <div class="glow"></div>
+            <div class="icon facebook"><i class="fab fa-facebook-f"></i></div>
+            <div class="icon tiktok"><i class="fab fa-tiktok"></i></div>
+            <div class="icon youtube"><i class="fab fa-youtube"></i></div>
+            <div class="icon x"><i class="fa-brands fa-x-twitter"></i></div>
+            <div class="icon instagram"><i class="fab fa-instagram"></i></div>
+          </div>
         </div>
       </div>
-      <div class="hero-image">
-        <div class="social-engagement">
-          <div class="glow"></div>
-          <div class="icon facebook"><i class="fab fa-facebook-f"></i></div>
-          <div class="icon tiktok"><i class="fab fa-tiktok"></i></div>
-          <div class="icon youtube"><i class="fab fa-youtube"></i></div>
-          <div class="icon x"><i class="fa-brands fa-x-twitter"></i></div>
-          <div class="icon instagram"><i class="fab fa-instagram"></i></div>
-        </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <div class="container">
-    <div class="stats-ribbon">
-      <div class="ribbon-item"><div class="number">Instagram</div><div class="label">Komentar & Like</div></div>
-      <div class="ribbon-item"><div class="number">TikTok</div><div class="label">Shares & Engagement</div></div>
-      <div class="ribbon-item"><div class="number">YouTube</div><div class="label">Komentar & Subscribe</div></div>
-      <div class="ribbon-item"><div class="number">PlayStore</div><div class="label">Review & Rating</div></div>
-    </div>
-  </div>
-
-  <div class="section">
+    <!-- Platform Ribbon -->
     <div class="container">
-      <h2 class="section-title">Layanan Buzzer Profesional</h2>
-      <div class="grid-2col">
-        <div class="card"><div class="card-icon"><i class="fas fa-comment-dots"></i></div><h3>Komentar Positif</h3><p>Komentar natural & relevan dari akun real.</p></div>
-        <div class="card"><div class="card-icon"><i class="fas fa-share-alt"></i></div><h3>Share / Repost</h3><p>Sebarkan konten secara masif & cepat.</p></div>
-        <div class="card"><div class="card-icon"><i class="fas fa-thumbs-up"></i></div><h3>Like & Engagement</h3><p>Perkuat algoritma dengan like awal.</p></div>
-        <div class="card"><div class="card-icon"><i class="fas fa-star"></i></div><h3>Review & Download</h3><p>Tingkatkan rating dan kredibilitas brand.</p></div>
+      <div class="stats-ribbon">
+        <div class="ribbon-item"><div class="number">Instagram</div><div class="label">Komentar & Like</div></div>
+        <div class="ribbon-item"><div class="number">TikTok</div><div class="label">Shares & Engagement</div></div>
+        <div class="ribbon-item"><div class="number">YouTube</div><div class="label">Komentar & Subscribe</div></div>
+        <div class="ribbon-item"><div class="number">PlayStore</div><div class="label">Review & Rating</div></div>
       </div>
     </div>
-  </div>
 
-  <div class="container">
-    <div class="insights-wrapper">
-      <div class="insight-card">
-        <div class="big-number">⚡ 1 Jam</div>
-        <h3>1 Jam Pertama Menentukan Segalanya</h3>
-        <p>Algoritma Instagram, TikTok, dan X menilai interaksi awal. Dengan komentar & like dari buzzer profesional, kontenmu berpeluang besar menuju viral. <strong>DjuraganBuzzer.id</strong> mempercepat engagement di masa kritis.</p>
-        <div class="badge-percent">+73% lebih tinggi potensi jangkauan</div>
-      </div>
-      <div class="insight-card">
-        <div class="big-number">34%</div>
-        <h3>Orang Mengambil Keputusan Setelah Membaca Komentar</h3>
-        <p>Komentar positif membangun persepsi, kepercayaan, bahkan mempengaruhi keputusan pembelian. Jadilah brand yang dipercaya dengan interaksi sehat.</p>
-        <div class="badge-percent"><i class="fas fa-chart-simple"></i> Faktor kepercayaan +62%</div>
-      </div>
-    </div>
-  </div>
-
-  <div class="container">
-    <div class="roles-flex">
-      <div class="role-card"><h4><i class="fas fa-chalkboard-user"></i> Advertiser</h4><ul><li><i class="fas fa-check-circle"></i> Promosikan akun bisnis</li><li><i class="fas fa-check-circle"></i> Minimum deposit Rp100.000</li><li><i class="fas fa-check-circle"></i> Postingan aman</li><li><i class="fas fa-check-circle"></i> Hasil real & engagement aman</li></ul><div style="margin-top:30px;"><a href="#" class="btn-primary" style="padding:8px 28px;">Order Sekarang</a></div></div>
-      <div class="role-card"><h4><i class="fas fa-users"></i> Komentator</h4><ul><li><i class="fas fa-check-circle"></i> Daftar gratis, penghasilan tambahan</li><li><i class="fas fa-check-circle"></i> Nama medsos harus sama</li><li><i class="fas fa-check-circle"></i> Tarik tunai minimal Rp250.000</li><li><i class="fas fa-check-circle"></i> Upah per komentar & subscribe</li></ul><div style="margin-top:30px;"><a href="#" class="btn-secondary" style="background:#f8fafc;">Gabung Sekarang →</a></div></div>
-    </div>
-  </div>
-
-  <div class="container">
-    <div class="live-orders">
-      <h3><i class="fas fa-shopping-cart"></i> Order terbaru dari advertiser</h3>
-      <div class="order-marquee">
-        <span class="order-item">Instagram Komen 20 ⏱️ 13 menit lalu</span>
-        <span class="order-item">YouTube Komen 100 ⏱️ 55 menit lalu</span>
-        <span class="order-item">PlayStore Review 500 ⏱️ 5 menit lalu</span>
-        <span class="order-item">1000 subscribers YT ⏱️ 3 menit lalu</span>
-        <span class="order-item">Kampanye TikTok 200 ⏱️ 20 menit lalu</span>
-        <span class="order-item">Share Twitter 100 ⏱️ 48 menit lalu</span>
-      </div>
-      <p style="font-size:0.8rem; margin-top:20px; opacity:0.7;">* Live activity real dari platform DjuraganBuzzer.id</p>
-    </div>
-  </div>
-
-  <div class="container" style="text-align: center; margin: 30px auto 60px;">
-    <h2 style="font-size: 2rem; font-weight: 700;">Siap Meningkatkan Brand Awareness?</h2>
-    <p style="max-width: 600px; margin: 16px auto;">Dapatkan komentar positif dari ribuan kontributor se-Indonesia. Aman, real, dan tanpa risiko spam.</p>
-    <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
-      <a href="#" class="btn-primary">Konsultasi Gratis</a>
-      <a href="#" class="btn-secondary">Lihat Paket Layanan</a>
-    </div>
-  </div>
-</main>
-
-<footer class="new-footer">
-  <div class="container">
-    <div class="footer-grid-new">
-      <div class="footer-col-new">
-        <div class="footer-logo">DjuraganBuzzer.id</div>
-        <p class="contact-wa"><i class="fab fa-whatsapp"></i> 0819-9976-3274</p>
-      </div>
-      <div class="footer-col-new">
-        <h4>Informasi</h4>
-        <a href="#">Beranda</a>
-        <a href="#">Tentang Kami</a>
-        <a href="#">Layanan & Harga</a>
-        <a href="#">Tanya Jawab</a>
-        <a href="#">Syarat dan Ketentuan</a>
-        <a href="#">Blog</a>
-        <a href="#">Kontak Kami</a>
-        <a href="#">Panduan Untuk Advertiser</a>
-      </div>
-      <div class="footer-col-new">
-        <h4>Sosial Media</h4>
-        <div class="social-icons">
-          <a href="#"><i class="fab fa-facebook-f"></i></a>
-          <a href="#"><i class="fab fa-instagram"></i></a>
-          <a href="#"><i class="fab fa-tiktok"></i></a>
-          <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
-          <a href="#"><i class="fab fa-youtube"></i></a>
-        </div>
-        <div style="margin-top: 24px;">
-          <a href="#">Pemakaian Logo</a>
-          <a href="#">Brand Guidelines</a>
+    <!-- Layanan -->
+    <section class="section" aria-labelledby="layanan-heading">
+      <div class="container">
+        <h2 class="section-title" id="layanan-heading">Layanan Buzzer Profesional</h2>
+        <div class="grid-2col">
+          <div class="card"><div class="card-icon"><i class="fas fa-comment-dots" aria-hidden="true"></i></div><h3>Komentar Positif</h3><p>Komentar natural & relevan dari akun real.</p></div>
+          <div class="card"><div class="card-icon"><i class="fas fa-share-alt" aria-hidden="true"></i></div><h3>Share / Repost</h3><p>Sebarkan konten secara masif & cepat.</p></div>
+          <div class="card"><div class="card-icon"><i class="fas fa-thumbs-up" aria-hidden="true"></i></div><h3>Like & Engagement</h3><p>Perkuat algoritma dengan like awal.</p></div>
+          <div class="card"><div class="card-icon"><i class="fas fa-star" aria-hidden="true"></i></div><h3>Review & Download</h3><p>Tingkatkan rating dan kredibilitas brand.</p></div>
         </div>
       </div>
-      <div class="footer-col-new">
-        <h4>Pembayaran</h4>
-        <div class="payment-methods">
-          <span>PermataBank</span><span>BCA</span><span>BNI</span><span>Visa</span>
-          <span>Gopay</span><span>Mandiri</span><span>Mastercard</span><span>Midtrans</span>
+    </section>
+
+    <!-- Insight Section -->
+    <div class="container">
+      <h2 class="section-title" style="margin-bottom: 0;">Mengapa Engagement Penting?</h2>
+      <div class="insights-wrapper">
+        <div class="insight-card">
+          <div class="big-number">⚡ 1 Jam</div>
+          <h3>1 Jam Pertama Menentukan Segalanya</h3>
+          <p>Algoritma Instagram, TikTok, dan X menilai interaksi awal. Dengan komentar & like dari buzzer profesional, kontenmu berpeluang besar menuju viral. <strong>DjuraganBuzzer.id</strong> mempercepat engagement di masa kritis.</p>
+          <div class="badge-percent">+73% lebih tinggi potensi jangkauan</div>
         </div>
-        <div class="ssl-badge"><i class="fas fa-lock"></i> SSL Secure</div>
+        <div class="insight-card">
+          <div class="big-number">34%</div>
+          <h3>Orang Mengambil Keputusan Setelah Membaca Komentar</h3>
+          <p>Komentar positif membangun persepsi, kepercayaan, bahkan mempengaruhi keputusan pembelian. Jadilah brand yang dipercaya dengan interaksi sehat.</p>
+          <div class="badge-percent"><i class="fas fa-chart-simple" aria-hidden="true"></i> Faktor kepercayaan +62%</div>
+        </div>
       </div>
     </div>
-    <div class="copyright-new">
-      <p>Copyright © DjuraganBuzzer.id 2026. All rights reserved.</p>
+
+    <!-- Peran -->
+    <div class="container">
+      <div class="roles-flex">
+        <div class="role-card">
+          <h4><i class="fas fa-chalkboard-user" aria-hidden="true"></i> Advertiser</h4>
+          <ul>
+            <li><i class="fas fa-check-circle" aria-hidden="true"></i> Promosikan akun bisnis</li>
+            <li><i class="fas fa-check-circle" aria-hidden="true"></i> Minimum deposit Rp100.000</li>
+            <li><i class="fas fa-check-circle" aria-hidden="true"></i> Postingan aman</li>
+            <li><i class="fas fa-check-circle" aria-hidden="true"></i> Hasil real & engagement aman</li>
+          </ul>
+          <div style="margin-top:30px;"><a href="#" class="btn-primary" style="padding:8px 28px;">Order Sekarang</a></div>
+        </div>
+        <div class="role-card">
+          <h4><i class="fas fa-users" aria-hidden="true"></i> Komentator</h4>
+          <ul>
+            <li><i class="fas fa-check-circle" aria-hidden="true"></i> Daftar gratis, penghasilan tambahan</li>
+            <li><i class="fas fa-check-circle" aria-hidden="true"></i> Nama medsos harus sama</li>
+            <li><i class="fas fa-check-circle" aria-hidden="true"></i> Tarik tunai minimal Rp250.000</li>
+            <li><i class="fas fa-check-circle" aria-hidden="true"></i> Upah per komentar & subscribe</li>
+          </ul>
+          <div style="margin-top:30px;"><a href="#" class="btn-secondary" style="background:#f8fafc;">Gabung Sekarang →</a></div>
+        </div>
+      </div>
     </div>
-  </div>
-</footer>
 
-<div class="floating-chat" id="chatBtn">
-  <i class="fas fa-comment"></i>
-</div>
+    <!-- Live orders -->
+    <div class="container">
+      <div class="live-orders" aria-label="Order terbaru">
+        <h3 style="margin-bottom:16px;"><i class="fas fa-shopping-cart" aria-hidden="true"></i> Order terbaru dari advertiser</h3>
+        <div class="order-marquee" aria-hidden="true">
+          <span class="order-item">Instagram Komen 20 ⏱️ 13 menit lalu</span>
+          <span class="order-item">YouTube Komen 100 ⏱️ 55 menit lalu</span>
+          <span class="order-item">PlayStore Review 500 ⏱️ 5 menit lalu</span>
+          <span class="order-item">1000 subscribers YT ⏱️ 3 menit lalu</span>
+          <span class="order-item">Kampanye TikTok 200 ⏱️ 20 menit lalu</span>
+          <span class="order-item">Share Twitter 100 ⏱️ 48 menit lalu</span>
+          <!-- duplikat untuk loop seamless -->
+          <span class="order-item">Instagram Komen 20 ⏱️ 13 menit lalu</span>
+          <span class="order-item">YouTube Komen 100 ⏱️ 55 menit lalu</span>
+          <span class="order-item">PlayStore Review 500 ⏱️ 5 menit lalu</span>
+          <span class="order-item">1000 subscribers YT ⏱️ 3 menit lalu</span>
+          <span class="order-item">Kampanye TikTok 200 ⏱️ 20 menit lalu</span>
+          <span class="order-item">Share Twitter 100 ⏱️ 48 menit lalu</span>
+        </div>
+        <p style="font-size:0.8rem; margin-top:20px; opacity:0.8;">* Live activity real dari platform DjuraganBuzzer.id</p>
+      </div>
+    </div>
 
-<script>
-  document.getElementById('chatBtn').addEventListener('click', () => {
-    alert('💬 Halo! Tim support DjuraganBuzzer.id siap membantu promo bisnis Anda.');
-  });
-</script>
+    <!-- CTA akhir -->
+    <div class="container" style="text-align: center; margin: 30px auto 60px;">
+      <h2 style="font-size: 2rem; font-weight: 700;">Siap Meningkatkan Brand Awareness?</h2>
+      <p style="max-width: 600px; margin: 16px auto;">Dapatkan komentar positif dari ribuan kontributor se-Indonesia. Aman, real, dan tanpa risiko spam.</p>
+      <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
+        <a href="#" class="btn-primary">Konsultasi Gratis</a>
+        <a href="#" class="btn-secondary">Lihat Paket Layanan</a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid-new">
+        <div class="footer-col-new">
+          <div class="footer-logo">DjuraganBuzzer.id</div>
+          <p class="contact-wa"><i class="fab fa-whatsapp" aria-hidden="true"></i> 0819-9976-3274</p>
+        </div>
+        <div class="footer-col-new">
+          <h4>Informasi</h4>
+          <a href="#">Beranda</a>
+          <a href="#">Tentang Kami</a>
+          <a href="#">Layanan & Harga</a>
+          <a href="#">Tanya Jawab</a>
+          <a href="#">Syarat dan Ketentuan</a>
+          <a href="#">Kebijakan Privasi</a>
+          <a href="#">Blog</a>
+          <a href="#">Kontak Kami</a>
+          <a href="#">Panduan Untuk Advertiser</a>
+        </div>
+        <div class="footer-col-new">
+          <h4>Sosial Media</h4>
+          <div class="social-icons">
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+            <a href="#" aria-label="TikTok"><i class="fab fa-tiktok" aria-hidden="true"></i></a>
+            <a href="#" aria-label="X"><i class="fa-brands fa-x-twitter" aria-hidden="true"></i></a>
+            <a href="#" aria-label="YouTube"><i class="fab fa-youtube" aria-hidden="true"></i></a>
+          </div>
+          <div style="margin-top: 24px;">
+            <a href="#">Pemakaian Logo</a>
+            <a href="#">Brand Guidelines</a>
+          </div>
+        </div>
+        <div class="footer-col-new">
+          <h4>Pembayaran</h4>
+          <div class="payment-methods">
+            <span>PermataBank</span><span>BCA</span><span>BNI</span><span>Visa</span>
+            <span>Gopay</span><span>Mandiri</span><span>Mastercard</span><span>Midtrans</span>
+          </div>
+          <div class="ssl-badge"><i class="fas fa-lock" aria-hidden="true"></i> SSL Secure</div>
+        </div>
+      </div>
+      <div class="copyright-new">
+        <p>Copyright © DjuraganBuzzer.id 2026. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating WhatsApp Chat -->
+  <a href="https://wa.me/6281999763274?text=Halo%20DjuraganBuzzer.id%2C%20saya%20ingin%20konsultasi%20promosi" 
+     target="_blank" 
+     rel="noopener noreferrer" 
+     class="floating-chat" 
+     id="chatBtn" 
+     aria-label="Chat via WhatsApp">
+    <i class="fas fa-comment" aria-hidden="true"></i>
+  </a>
+
+  <!-- Script untuk hamburger menu -->
+  <script>
+    const hamburger = document.getElementById('hamburger-btn');
+    const navMenu = document.getElementById('nav-menu');
+    if (hamburger && navMenu) {
+      hamburger.addEventListener('click', () => {
+        const expanded = hamburger.getAttribute('aria-expanded') === 'true' || false;
+        hamburger.setAttribute('aria-expanded', !expanded);
+        navMenu.classList.toggle('active');
+      });
+    }
+  </script>
 </body>
 </html>
