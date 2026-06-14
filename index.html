@@ -242,7 +242,6 @@
       margin-bottom: 12px;
     }
 
-    /* Two insights layout - DIPERBAIKI AGAR RAPI */
     .insights-wrapper {
       display: flex;
       flex-wrap: wrap;
@@ -289,7 +288,6 @@
       margin-top: 16px;
     }
 
-    /* Roles grid */
     .roles-flex {
       display: flex;
       flex-wrap: wrap;
@@ -350,41 +348,114 @@
       font-weight: 500;
     }
 
-    footer {
+    /* ========= FOOTER BARU (sesuai permintaan) ========= */
+    .new-footer {
       background: #0f172a;
       color: #cbd5e1;
-      padding: 48px 0 24px;
+      padding: 56px 0 32px;
       margin-top: 40px;
     }
-    .footer-grid {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
+    .footer-grid-new {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
       gap: 40px;
+      margin-bottom: 48px;
     }
-    .footer-col p {
-      max-width: 260px;
-      margin-top: 12px;
-    }
-    .footer-col h4 {
+    .footer-col-new h4 {
       color: white;
+      font-size: 1.2rem;
+      font-weight: 700;
       margin-bottom: 20px;
+      position: relative;
+      display: inline-block;
     }
-    .footer-col a {
+    .footer-col-new p, .footer-col-new address {
+      font-style: normal;
+      line-height: 1.6;
+      margin-bottom: 12px;
+    }
+    .footer-col-new a {
       color: #94a3b8;
       text-decoration: none;
       display: block;
-      margin-bottom: 10px;
+      margin-bottom: 12px;
+      transition: 0.2s;
     }
-    .footer-col a:hover {
+    .footer-col-new a:hover {
+      color: #cbd5e1;
+      transform: translateX(3px);
+    }
+    .footer-col-new .contact-wa {
+      font-size: 1rem;
+      font-weight: 600;
+      color: #25D366;
+      margin-top: 12px;
+    }
+    .social-icons {
+      display: flex;
+      gap: 18px;
+      margin-top: 16px;
+      flex-wrap: wrap;
+    }
+    .social-icons a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(255,255,255,0.08);
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      font-size: 1.3rem;
+      transition: 0.2s;
       color: #cbd5e1;
     }
-    .copyright {
-      border-top: 1px solid #1e293b;
-      padding-top: 24px;
-      text-align: center;
-      margin-top: 40px;
+    .social-icons a:hover {
+      background: #1e6f5c;
+      color: white;
+      transform: translateY(-3px);
+    }
+    .payment-methods {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      align-items: center;
+      margin-top: 16px;
+    }
+    .payment-methods span {
+      background: rgba(255,255,255,0.1);
+      padding: 6px 14px;
+      border-radius: 40px;
       font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+    }
+    .copyright-new {
+      border-top: 1px solid #1e293b;
+      padding-top: 28px;
+      text-align: center;
+      font-size: 0.8rem;
+      color: #64748b;
+    }
+    .footer-logo {
+      font-size: 1.6rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, #e2e8f0, #94a3b8);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      margin-bottom: 16px;
+    }
+    @media (max-width: 768px) {
+      .footer-grid-new {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+      .hero-stats {
+        flex-wrap: wrap;
+      }
+      .insights-wrapper {
+        flex-direction: column;
+      }
     }
 
     .floating-chat {
@@ -410,29 +481,6 @@
     .floating-chat:hover {
       background: #0f5a49;
       transform: scale(1.02);
-    }
-
-    @media (max-width: 768px) {
-      .nav-container {
-        flex-direction: column;
-        gap: 15px;
-      }
-      .hero-content h1 {
-        font-size: 2.2rem;
-      }
-      .section-title {
-        font-size: 1.8rem;
-      }
-      .stats-ribbon {
-        flex-direction: column;
-        text-align: center;
-      }
-      .hero-stats {
-        flex-wrap: wrap;
-      }
-      .insights-wrapper {
-        flex-direction: column;
-      }
     }
   </style>
 </head>
@@ -511,17 +559,14 @@
     </div>
   </div>
 
-  <!-- DUA KONTEN UTAMA YANG DIRAPIKAN -->
   <div class="container">
     <div class="insights-wrapper">
-      <!-- Card 1: 1 Jam Pertama -->
       <div class="insight-card">
         <div class="big-number">⚡ 1 Jam</div>
         <h3>1 Jam Pertama Menentukan Segalanya</h3>
         <p>Algoritma Instagram, TikTok, dan X menilai interaksi awal. Dengan komentar & like dari buzzer profesional, kontenmu berpeluang besar menuju viral. <strong>DjuraganBuzzer.id</strong> mempercepat engagement di masa kritis.</p>
         <div class="badge-percent">+73% lebih tinggi potensi jangkauan</div>
       </div>
-      <!-- Card 2: 34% Keputusan -->
       <div class="insight-card">
         <div class="big-number">34%</div>
         <h3>Orang Mengambil Keputusan Setelah Membaca Komentar</h3>
@@ -531,7 +576,6 @@
     </div>
   </div>
 
-  <!-- Peran Advertiser & Komentator -->
   <div class="container">
     <div class="roles-flex">
       <div class="role-card">
@@ -559,7 +603,6 @@
     </div>
   </div>
 
-  <!-- Live order -->
   <div class="container">
     <div class="live-orders">
       <h3><i class="fas fa-shopping-cart"></i> Order terbaru dari advertiser</h3>
@@ -585,34 +628,69 @@
   </div>
 </main>
 
-<footer>
+<!-- FOOTER BARU (sesuai permintaan dengan alamat, WA, sosial media + YouTube & X, pembayaran) -->
+<footer class="new-footer">
   <div class="container">
-    <div class="footer-grid">
-      <div class="footer-col">
-        <div class="logo" style="color:white; background:white; -webkit-background-clip: unset;">DjuraganBuzzer.id</div>
-        <p>Jasa buzzer komen positif dan promosi media sosial dengan akun asli Indonesia. Meningkatkan interaksi digital secara organik.</p>
+    <div class="footer-grid-new">
+      <!-- Kolom 1: Alamat & Kontak -->
+      <div class="footer-col-new">
+        <div class="footer-logo">DjuraganBuzzer.id</div>
+        <address>
+          Jalan Cimanuk No. 6<br>
+          Bandung 40115 - Jawa Barat<br>
+          Indonesia
+        </address>
+        <p class="contact-wa"><i class="fab fa-whatsapp"></i> 0819-9976-3274</p>
+        <p><i class="far fa-envelope"></i> support@djuraganbuzzer.id</p>
       </div>
-      <div class="footer-col">
-        <h4>Layanan</h4>
-        <a href="#">Komentar Instagram</a>
-        <a href="#">Beli Like & Share</a>
-        <a href="#">Review PlayStore</a>
-        <a href="#">Kampanye Posting</a>
-      </div>
-      <div class="footer-col">
+
+      <!-- Kolom 2: Informasi (menu) -->
+      <div class="footer-col-new">
         <h4>Informasi</h4>
-        <a href="#">Cara Kerja</a>
-        <a href="#">Syarat & Ketentuan</a>
-        <a href="#">Kebijakan Privasi</a>
-        <a href="#">Hubungi Kami</a>
+        <a href="#">Beranda</a>
+        <a href="#">Tentang Kami</a>
+        <a href="#">Layanan & Harga</a>
+        <a href="#">Tanya Jawab</a>
+        <a href="#">Syarat dan Ketentuan</a>
+        <a href="#">Blog</a>
+        <a href="#">Kontak Kami</a>
+        <a href="#"><i class="fas fa-envelope-open-text"></i> Panduan Untuk Advertiser</a>
       </div>
-      <div class="footer-col">
-        <h4>Kontak</h4>
-        <p><i class="fas fa-map-marker-alt"></i> Jalan Cimanuk No. 6 Bandung - Jawa Barat</p>
-        <p><i class="fas fa-envelope"></i> support@djuraganbuzzer.id</p>
+
+      <!-- Kolom 3: Sosial Media (dengan YouTube & X) -->
+      <div class="footer-col-new">
+        <h4>Sosial Media</h4>
+        <div class="social-icons">
+          <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" aria-label="Twitter / X"><i class="fab fa-x-twitter"></i></a>
+          <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+        </div>
+        <div style="margin-top: 24px;">
+          <a href="#">Pemakaian Logo</a>
+          <a href="#">Brand Guidelines</a>
+        </div>
+      </div>
+
+      <!-- Kolom 4: Metode Pembayaran -->
+      <div class="footer-col-new">
+        <h4>Pembayaran</h4>
+        <div class="payment-methods">
+          <span>PermataBank</span>
+          <span>BCA</span>
+          <span>BNI</span>
+          <span>VISA</span>
+          <span>Gopay</span>
+          <span>Mandiri</span>
+          <span>Mastercard</span>
+          <span>Midtrans</span>
+        </div>
+        <div style="margin-top: 24px;">
+          <img src="https://placehold.co/120x40/e2e8f0/1e6f5c?text=SSL+Secure" alt="Secure payment" style="max-width:100px; border-radius:8px;">
+        </div>
       </div>
     </div>
-    <div class="copyright">
+    <div class="copyright-new">
       <p>Copyright © DjuraganBuzzer.id 2026. All rights reserved. Kami tidak menerima permintaan komen negatif/SARA/ilegal.</p>
     </div>
   </div>
