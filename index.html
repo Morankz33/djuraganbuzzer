@@ -1,42 +1,617 @@
-<div style="
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  padding:90px 60px;
-  background:linear-gradient(135deg,#1faa59,#7bed9f);
-  color:white;
-  flex-wrap:wrap;
-">
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+  <title>RajaKomen.com | Jasa Buzzer Komen Positif & Promosi Bisnis</title>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+  <!-- Font Awesome 6 (free) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-  <!-- LEFT TEXT -->
-  <div style="max-width:600px;">
-    <h1 style="font-size:44px; margin-bottom:15px;">
-      Jasa Digital Engagement untuk Meningkatkan Reputasi Brand Anda
-    </h1>
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #f9fafc;
+      color: #1e293b;
+      line-height: 1.5;
+      scroll-behavior: smooth;
+    }
 
-    <p style="font-size:18px; line-height:1.6; opacity:0.95;">
-      Kami membantu brand, bisnis, dan figur publik membangun percakapan positif,
-      meningkatkan engagement, dan memperkuat citra digital secara strategis.
-    </p>
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
 
-    <a href="https://wa.me/6281999763274?text=Halo%20saya%20ingin%20konsultasi"
-       style="
-       display:inline-block;
-       margin-top:20px;
-       background:#111;
-       color:white;
-       padding:14px 26px;
-       text-decoration:none;
-       border-radius:6px;
-       ">
-      Konsultasi Sekarang
-    </a>
+    /* Header & Nav */
+    .navbar {
+      background: white;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.02), 0 1px 2px rgba(0,0,0,0.03);
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(2px);
+      background: rgba(255,255,255,0.96);
+    }
+    .nav-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      padding: 16px 0;
+    }
+    .logo {
+      font-size: 1.8rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, #0f2b3d, #1e6f5c);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      letter-spacing: -0.5px;
+    }
+    .logo span {
+      color: #2c7a5e;
+      background: none;
+      -webkit-background-clip: unset;
+    }
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      align-items: center;
+    }
+    .nav-links a {
+      text-decoration: none;
+      font-weight: 500;
+      color: #2c3e50;
+      transition: 0.2s;
+    }
+    .nav-links a:hover {
+      color: #1e6f5c;
+    }
+    .btn-outline-light {
+      border: 1.5px solid #1e6f5c;
+      background: transparent;
+      padding: 8px 20px;
+      border-radius: 40px;
+      font-weight: 600;
+      color: #1e6f5c;
+      transition: 0.2s;
+    }
+    .btn-outline-light:hover {
+      background: #1e6f5c;
+      color: white;
+    }
+
+    /* Buttons */
+    .btn-primary {
+      background: #1e6f5c;
+      border: none;
+      padding: 12px 32px;
+      border-radius: 40px;
+      font-weight: 700;
+      color: white;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      box-shadow: 0 8px 14px -6px rgba(30,111,92,0.2);
+      display: inline-block;
+      text-decoration: none;
+    }
+    .btn-primary:hover {
+      background: #0f5a49;
+      transform: translateY(-2px);
+      box-shadow: 0 12px 20px -8px rgba(30,111,92,0.3);
+    }
+    .btn-secondary {
+      background: white;
+      border: 1px solid #cbd5e1;
+      padding: 12px 32px;
+      border-radius: 40px;
+      font-weight: 600;
+      color: #1f2937;
+      transition: 0.2s;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+    }
+    .btn-secondary:hover {
+      background: #f1f5f9;
+      border-color: #94a3b8;
+    }
+
+    /* Hero */
+    .hero {
+      padding: 60px 0 40px;
+    }
+    .hero-grid {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 40px;
+    }
+    .hero-content {
+      flex: 1;
+    }
+    .hero-badge {
+      background: #e0f2fe;
+      color: #0c4e6e;
+      display: inline-block;
+      padding: 4px 14px;
+      border-radius: 50px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 20px;
+    }
+    .hero-content h1 {
+      font-size: 3rem;
+      font-weight: 800;
+      line-height: 1.2;
+      margin-bottom: 20px;
+      background: linear-gradient(145deg, #0f2b3d, #1b6b57);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    .hero-content p {
+      font-size: 1.1rem;
+      color: #334155;
+      margin-bottom: 32px;
+      max-width: 550px;
+    }
+    .hero-stats {
+      display: flex;
+      gap: 28px;
+      margin-top: 32px;
+    }
+    .stat-item h3 {
+      font-size: 1.9rem;
+      font-weight: 800;
+      color: #1e6f5c;
+    }
+    .hero-image {
+      flex: 1;
+      text-align: center;
+    }
+    .hero-image img {
+      max-width: 100%;
+      border-radius: 36px;
+    }
+
+    /* Stats ribbon */
+    .stats-ribbon {
+      background: white;
+      border-radius: 48px;
+      padding: 20px 32px;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.03);
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      margin: 30px 0 40px;
+      gap: 20px;
+      border: 1px solid #eef2ff;
+    }
+    .ribbon-item {
+      text-align: center;
+      flex: 1;
+    }
+    .ribbon-item .number {
+      font-size: 2rem;
+      font-weight: 800;
+      color: #1e6f5c;
+    }
+    .ribbon-item .label {
+      font-size: 0.9rem;
+      color: #4b5563;
+    }
+
+    /* Section */
+    .section {
+      padding: 70px 0;
+    }
+    .section-title {
+      font-size: 2.2rem;
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 48px;
+    }
+    .grid-2col {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 32px;
+    }
+    .card {
+      background: white;
+      border-radius: 28px;
+      padding: 32px 28px;
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.03);
+      transition: all 0.3s;
+      border: 1px solid #edf2f7;
+    }
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 30px -12px rgba(0, 0, 0, 0.08);
+      border-color: #cbd5e1;
+    }
+    .card-icon {
+      font-size: 2.6rem;
+      color: #1e6f5c;
+      margin-bottom: 20px;
+    }
+    .card h3 {
+      font-size: 1.5rem;
+      margin-bottom: 12px;
+    }
+
+    /* Testimonial / insight blocks */
+    .insight-block {
+      background: linear-gradient(115deg, #f0f9ff 0%, #ffffff 100%);
+      border-radius: 32px;
+      padding: 48px 36px;
+      margin: 32px 0;
+      text-align: center;
+    }
+    .insight-block h3 {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 18px;
+    }
+    .insight-number {
+      font-size: 3.5rem;
+      font-weight: 800;
+      color: #1e6f5c;
+    }
+
+    /* Roles grid (advertiser & komentator) */
+    .roles-flex {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 32px;
+      margin-top: 20px;
+    }
+    .role-card {
+      flex: 1;
+      background: white;
+      border-radius: 28px;
+      padding: 28px;
+      border: 1px solid #e2e8f0;
+    }
+    .role-card h4 {
+      font-size: 1.7rem;
+      margin-bottom: 20px;
+      font-weight: 700;
+    }
+    .role-card ul {
+      list-style: none;
+    }
+    .role-card li {
+      padding: 8px 0;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .role-card li i {
+      color: #1e6f5c;
+      width: 24px;
+    }
+
+    /* Live orders */
+    .live-orders {
+      background: #1e293b;
+      color: white;
+      border-radius: 32px;
+      padding: 28px 32px;
+      margin: 50px 0;
+    }
+    .live-orders h3 {
+      font-size: 1.4rem;
+      margin-bottom: 24px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .order-marquee {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: space-between;
+    }
+    .order-item {
+      background: rgba(255,255,255,0.1);
+      border-radius: 40px;
+      padding: 6px 18px;
+      font-size: 0.85rem;
+      font-weight: 500;
+    }
+
+    /* Footer */
+    footer {
+      background: #0f172a;
+      color: #cbd5e1;
+      padding: 48px 0 24px;
+      margin-top: 40px;
+    }
+    .footer-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 40px;
+    }
+    .footer-col p {
+      max-width: 260px;
+      margin-top: 12px;
+    }
+    .footer-col h4 {
+      color: white;
+      margin-bottom: 20px;
+    }
+    .footer-col a {
+      color: #94a3b8;
+      text-decoration: none;
+      display: block;
+      margin-bottom: 10px;
+    }
+    .footer-col a:hover {
+      color: #cbd5e1;
+    }
+    .copyright {
+      border-top: 1px solid #1e293b;
+      padding-top: 24px;
+      text-align: center;
+      margin-top: 40px;
+      font-size: 0.8rem;
+    }
+
+    /* floating chat */
+    .floating-chat {
+      position: fixed;
+      bottom: 28px;
+      right: 28px;
+      background: #1e6f5c;
+      width: 56px;
+      height: 56px;
+      border-radius: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+      cursor: pointer;
+      transition: 0.2s;
+      z-index: 99;
+    }
+    .floating-chat i {
+      font-size: 1.8rem;
+      color: white;
+    }
+    .floating-chat:hover {
+      background: #0f5a49;
+      transform: scale(1.02);
+    }
+
+    @media (max-width: 768px) {
+      .nav-container {
+        flex-direction: column;
+        gap: 15px;
+      }
+      .hero-content h1 {
+        font-size: 2.2rem;
+      }
+      .section-title {
+        font-size: 1.8rem;
+      }
+      .stats-ribbon {
+        flex-direction: column;
+        text-align: center;
+      }
+      .hero-stats {
+        flex-wrap: wrap;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<div class="navbar">
+  <div class="container nav-container">
+    <div class="logo">Raja<span>Komen</span>.com</div>
+    <div class="nav-links">
+      <a href="#">Beranda</a>
+      <a href="#">Layanan</a>
+      <a href="#">Cara Kerja</a>
+      <a href="#">Daftar</a>
+      <a href="#" class="btn-outline-light">Masuk</a>
+    </div>
   </div>
-
-  <!-- RIGHT ILLUSTRATION PLACEHOLDER -->
-  <div style="margin-top:30px;">
-    <img src="https://illustrations.popsy.co/amber/digital-nomad.svg"
-         style="width:380px; max-width:100%;">
-  </div>
-
 </div>
+
+<main>
+  <!-- Hero section -->
+  <section class="hero">
+    <div class="container hero-grid">
+      <div class="hero-content">
+        <div class="hero-badge"><i class="fas fa-chart-line"></i> Jasa Buzzer #1 Indonesia</div>
+        <h1>Komentar Positif & <br>Promosi Bisnis Viral</h1>
+        <p>Bangun opini publik, tingkatkan engagement, dan jangkau audiens lebih luas dengan komentar dari akun asli orang Indonesia. Bukan robot, 100% real interaksi.</p>
+        <div style="display: flex; gap: 16px; flex-wrap: wrap;">
+          <a href="#" class="btn-primary">Mulai Promosi →</a>
+          <a href="#" class="btn-secondary">Jadi Komentator</a>
+        </div>
+        <div class="hero-stats">
+          <div class="stat-item"><h3>272K+</h3><span>Komentator Terdaftar</span></div>
+          <div class="stat-item"><h3>3K+</h3><span>Order Kemarin</span></div>
+          <div class="stat-item"><h3>1K+</h3><span>Order Hari Ini</span></div>
+        </div>
+      </div>
+      <div class="hero-image">
+        <img src="https://placehold.co/520x480/eef2ff/1e6f5c?text=+Social+Media+Engagement" alt="Social Media Buzz">
+      </div>
+    </div>
+  </section>
+
+  <!-- Statistic ribbon -->
+  <div class="container">
+    <div class="stats-ribbon">
+      <div class="ribbon-item"><div class="number">Instagram</div><div class="label">Komentar & Like</div></div>
+      <div class="ribbon-item"><div class="number">TikTok</div><div class="label">Shares & Engagement</div></div>
+      <div class="ribbon-item"><div class="number">YouTube</div><div class="label">Komentar & Subscribe</div></div>
+      <div class="ribbon-item"><div class="number">PlayStore</div><div class="label">Review & Rating</div></div>
+    </div>
+  </div>
+
+  <!-- Layanan Unggulan -->
+  <div class="section">
+    <div class="container">
+      <h2 class="section-title">Layanan Buzzer Profesional</h2>
+      <div class="grid-2col">
+        <div class="card">
+          <div class="card-icon"><i class="fas fa-comment-dots"></i></div>
+          <h3>Komentar Positif</h3>
+          <p>Komentar natural & relevan dari akun real. Meningkatkan kepercayaan dan interaksi organik di setiap postingan.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon"><i class="fas fa-share-alt"></i></div>
+          <h3>Share / Repost</h3>
+          <p>Sebarkan konten ke berbagai platform media sosial secara masif & cepat — tingkatkan reach hingga viral.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon"><i class="fas fa-thumbs-up"></i></div>
+          <h3>Like & Engagement</h3>
+          <p>Perkuat algoritma dengan like awal. 1 jam pertama yang menentukan untuk trending & explore page.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon"><i class="fas fa-star"></i></div>
+          <h3>Review & Download</h3>
+          <p>Ulasan positif di Google Maps / PlayStore / Aplikasi, tingkatkan rating dan kredibilitas brand.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- insight 1 jam pertama -->
+  <div class="container">
+    <div class="insight-block">
+      <h3>⚡ 1 Jam Pertama Menentukan Segalanya</h3>
+      <p>Algoritma Instagram, TikTok, dan X menilai interaksi awal. Dengan komentar & like dari buzzer profesional, kontenmu berpeluang besar menuju viral. <strong>RajaKomen.com</strong> mempercepat engagement di masa kritis.</p>
+      <div style="margin-top: 24px;"><span class="insight-number">+73%</span> <span style="font-weight:500;">lebih tinggi potensi jangkauan</span></div>
+    </div>
+  </div>
+
+  <!-- Statistik penting: 34% keputusan -->
+  <div class="container" style="margin-bottom: 40px;">
+    <div style="background: #eef2ff; border-radius: 28px; padding: 28px 32px; text-align: center;">
+      <div class="insight-number">34%</div>
+      <h3 style="font-weight: 700;">Orang Mengambil Keputusan Setelah Membaca Komentar</h3>
+      <p>Komentar positif membangun persepsi, kepercayaan, bahkan mempengaruhi keputusan pembelian. Jadilah brand yang dipercaya dengan interaksi sehat.</p>
+    </div>
+  </div>
+
+  <!-- Peran: Advertiser vs Komentator -->
+  <div class="container">
+    <div class="roles-flex">
+      <div class="role-card">
+        <h4><i class="fas fa-chalkboard-user"></i> Advertiser</h4>
+        <ul>
+          <li><i class="fas fa-check-circle"></i> Promosikan akun bisnis / brand</li>
+          <li><i class="fas fa-check-circle"></i> Minimum deposit Rp100.000</li>
+          <li><i class="fas fa-check-circle"></i> Postingan aman & tidak melanggar hukum</li>
+          <li><i class="fas fa-check-circle"></i> Catatan jelas untuk komentator</li>
+          <li><i class="fas fa-check-circle"></i> Hasil real & engagement aman</li>
+        </ul>
+        <div style="margin-top: 30px;"><a href="#" class="btn-primary" style="padding: 8px 28px;">Order Sekarang</a></div>
+      </div>
+      <div class="role-card">
+        <h4><i class="fas fa-users"></i> Komentator</h4>
+        <ul>
+          <li><i class="fas fa-check-circle"></i> Daftar gratis, penghasilan tambahan</li>
+          <li><i class="fas fa-check-circle"></i> Nama media sosial harus sama saat pendaftaran</li>
+          <li><i class="fas fa-check-circle"></i> Aktif minimal Gmail & akun medsos real</li>
+          <li><i class="fas fa-check-circle"></i> Tarik tunai minimal Rp250.000 (tgl 1-5 setiap bulan)</li>
+          <li><i class="fas fa-check-circle"></i> Dapat upah per komentar & tugas subscribe</li>
+        </ul>
+        <div style="margin-top: 30px;"><a href="#" class="btn-secondary" style="background:#f8fafc;">Gabung Sekarang →</a></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Live order activity (simulasi order terbaru) -->
+  <div class="container">
+    <div class="live-orders">
+      <h3><i class="fas fa-shopping-cart"></i> Order terbaru dari advertiser</h3>
+      <div class="order-marquee">
+        <span class="order-item">Instagram Komen 20 ⏱️ 13 menit lalu</span>
+        <span class="order-item">YouTube Komen 100 ⏱️ 55 menit lalu</span>
+        <span class="order-item">PlayStore Review 500 ⏱️ 5 menit lalu</span>
+        <span class="order-item">1000 subscribers YT ⏱️ 3 menit lalu</span>
+        <span class="order-item">Kampanye Posting TikTok 200 ⏱️ 20 menit lalu</span>
+        <span class="order-item">Share Twitter 100 ⏱️ 48 menit lalu</span>
+      </div>
+      <p style="font-size:0.8rem; margin-top:20px; opacity:0.7;">* Live activity real dari platform RajaKomen.com</p>
+    </div>
+  </div>
+
+  <!-- CTA terakhir -->
+  <div class="container" style="text-align: center; margin: 30px auto 60px;">
+    <h2 style="font-size: 2rem; font-weight: 700;">Siap Meningkatkan Brand Awareness?</h2>
+    <p style="max-width: 600px; margin: 16px auto;">Dapatkan komentar positif dari ribuan kontributor se-Indonesia. Aman, real, dan tanpa risiko spam.</p>
+    <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; margin-top: 20px;">
+      <a href="#" class="btn-primary">Konsultasi Gratis</a>
+      <a href="#" class="btn-secondary">Lihat Paket Layanan</a>
+    </div>
+  </div>
+</main>
+
+<!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <div class="logo" style="color:white; background:white; -webkit-background-clip: unset;">RajaKomen.com</div>
+        <p>Jasa buzzer komen positif dan promosi media sosial dengan akun asli Indonesia. Meningkatkan interaksi digital secara organik.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Layanan</h4>
+        <a href="#">Komentar Instagram</a>
+        <a href="#">Beli Like & Share</a>
+        <a href="#">Review PlayStore</a>
+        <a href="#">Kampanye Posting</a>
+      </div>
+      <div class="footer-col">
+        <h4>Informasi</h4>
+        <a href="#">Cara Kerja</a>
+        <a href="#">Syarat & Ketentuan</a>
+        <a href="#">Kebijakan Privasi</a>
+        <a href="#">Hubungi Kami</a>
+      </div>
+      <div class="footer-col">
+        <h4>Kontak</h4>
+        <p><i class="fas fa-map-marker-alt"></i> Jalan Cimanuk No. 6 Bandung - Jawa Barat</p>
+        <p><i class="fas fa-envelope"></i> support@rajakomen.com</p>
+      </div>
+    </div>
+    <div class="copyright">
+      <p>Copyright © RajaKomen.com 2026. All rights reserved. Kami tidak menerima permintaan komen negatif/SARA/ilegal.</p>
+    </div>
+  </div>
+</footer>
+
+<!-- Floating chat button -->
+<div class="floating-chat" id="chatBtn">
+  <i class="fas fa-comment"></i>
+</div>
+
+<script>
+  // Simulasi alert untuk tombol chat
+  const chatBtn = document.getElementById('chatBtn');
+  chatBtn.addEventListener('click', () => {
+    alert('💬 Halo! Tim support Rajakomen siap membantu promo bisnis Anda. (Demo interaktif)');
+  });
+  // efek animasi hover untuk tombol2
+  console.log('RajaKomen clone UI siap!');
+</script>
+</body>
+</html>
